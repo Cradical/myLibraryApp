@@ -12,21 +12,32 @@ import {
 import "./bookCard.css";
 
 const BookCard = props => {
-  const { bookImg, bookTitle, bookSubtitle, bookSummary } = props.cardInfo;
+  const { books } = props;
 
-  return (
-    <Fragment>
-      <Card className="book-card">
-        <CardImg top width="100%" src={bookImg.src} alt={bookImg.alt} />
+  if (!props.books) {
+    return null;
+  }
+
+  const bookCard = books.map(book => {
+    return (
+      <Card className="book-card" key={book.id}>
+        <CardImg
+          top
+          width="100%"
+          src={book.imageLink}
+          alt={`Book cover of ${book.title}`}
+        />
         <CardBody>
-          <CardTitle>{bookTitle}</CardTitle>
-          <CardSubtitle>{bookSubtitle}</CardSubtitle>
-          <CardText>{bookSummary}</CardText>
+          <CardTitle>{book.title}</CardTitle>
+          <CardSubtitle>{book.subtitle}</CardSubtitle>
+          <CardText>{book.bookSummary}</CardText>
           <Button>Button</Button>
         </CardBody>
       </Card>
-    </Fragment>
-  );
+    );
+  });
+
+  return <Fragment>{bookCard}</Fragment>;
 };
 
 export default BookCard;

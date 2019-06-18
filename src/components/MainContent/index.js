@@ -19,7 +19,6 @@ export default class MainContent extends React.Component {
   }
 
   render() {
-    console.log("state.books: ", this.state.books);
     return (
       <div className="mainContent">
         <h2 className="main-content-header">On The Shelve</h2>

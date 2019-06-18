@@ -15,7 +15,6 @@ const BookCard = props => {
   const { books } = props;
 
   if (!props.books) {
-    console.log("no books");
     return null;
   }
 
@@ -26,7 +25,7 @@ const BookCard = props => {
           top
           width="100%"
           src={book.imageLink}
-          alt={`book cover of ${book.title}`}
+          alt={`Book cover of ${book.title}`}
         />
         <CardBody>
           <CardTitle>{book.title}</CardTitle>

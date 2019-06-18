@@ -1,6 +1,7 @@
 .book-card {
   width: 250px;
-  height: auto;
+  height: min-content;
+  margin: 5px 10px;
 }
 
 .card-img-top {

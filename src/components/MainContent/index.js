@@ -23,7 +23,9 @@ export default class MainContent extends React.Component {
       <div className="mainContent">
         <h2 className="main-content-header">On The Shelve</h2>
         <p>Some Content will eventually go here</p>
-        <BookCard books={this.state.books} />
+        <div className="book-card-container">
+          <BookCard books={this.state.books} />
+        </div>
       </div>
     );
   }

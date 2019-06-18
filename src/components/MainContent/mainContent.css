@@ -12,3 +12,7 @@
   border-bottom: 1px solid gray;
   font-size: 48px;
 }
+
+.book-card-container {
+  display: inline-flex;
+}

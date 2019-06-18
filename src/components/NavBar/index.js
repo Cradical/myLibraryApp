@@ -33,7 +33,7 @@ export default class NavbarHeader extends React.Component {
       <Fragment>
         <Navbar className="navbar" color="primary" light expand="md">
           <NavbarBrand className="text-white" href="/">
-            My Library
+            Shelf-Book
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

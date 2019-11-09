@@ -1,0 +1,6 @@
+.book-card {
+  background-color: blue;
+  width: 30%;
+  height: min-content;
+  margin: 5px 10px;
+}

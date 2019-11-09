@@ -17,7 +17,9 @@ export default class SidebarMenu extends React.Component {
             <Link to='/theLibrary'>The Library</Link>
           </ListGroupItem>
           <ListGroupItem>BookNotes</ListGroupItem>
-          <ListGroupItem>Add to the Library</ListGroupItem>
+          <ListGroupItem>
+            <Link to='/addBook'>Add to the Library</Link>
+          </ListGroupItem>
           <ListGroupItem>Other things</ListGroupItem>
         </ListGroup>
       </div>

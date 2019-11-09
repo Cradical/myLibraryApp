@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
+import AddBook from '../AddBook'
 import BookShelf from '../BookShelf'
 import ErrorBoundary from '../ErrorBoundary'
 import TheLibrary from '../TheLibary'
@@ -30,6 +31,9 @@ export default class MainContent extends React.Component {
         <div className='book-card-container'>
           <ErrorBoundary>
             <Switch>
+              <Route path='/addBook'>
+                <AddBook />
+              </Route>
               <Route exact path='/bookShelf'>
                 <BookShelf books={this.state.books} />
               </Route>

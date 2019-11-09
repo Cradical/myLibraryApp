@@ -1,39 +1,15 @@
 import React, { Fragment } from 'react'
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-} from 'reactstrap'
 
-import './bookCard.css'
+import BookCard from '../../componentStash/BookCard'
 
-const BookCard = props => {
+const TheLibrary = props => {
   const { books } = props
 
-  const bookCard = books.map(book => {
-    return (
-      <Card className='book-card' key={book.id}>
-        <CardImg
-          top
-          width='100%'
-          src={book.imageLink}
-          alt={`Book cover of ${book.title}`}
-        />
-        <CardBody>
-          <CardTitle>{book.title}</CardTitle>
-          <CardSubtitle>{book.subtitle}</CardSubtitle>
-          <CardText>{book.bookSummary}</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-    )
-  })
-
-  return <Fragment>{bookCard}</Fragment>
+  return (
+    <Fragment>
+      <BookCard books={books} />
+    </Fragment>
+  )
 }
 
-export default BookCard
+export default TheLibrary

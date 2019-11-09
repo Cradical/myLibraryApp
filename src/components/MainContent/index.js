@@ -2,6 +2,7 @@ import React from 'react'
 
 import BookShelf from '../BookShelf'
 import ErrorBoundary from '../ErrorBoundary'
+import TheLibrary from '../TheLibary'
 
 import './mainContent.css'
 

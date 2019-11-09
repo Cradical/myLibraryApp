@@ -1,4 +1,5 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 import BookShelf from '../BookShelf'
 import ErrorBoundary from '../ErrorBoundary'
@@ -28,7 +29,14 @@ export default class MainContent extends React.Component {
         <h2 className='main-content-header'>On The Shelve</h2>
         <div className='book-card-container'>
           <ErrorBoundary>
-            <BookShelf books={this.state.books} />
+            <Switch>
+              <Route exact path='/bookShelf'>
+                <BookShelf books={this.state.books} />
+              </Route>
+              <Route path='/theLibrary'>
+                <TheLibrary books={this.state.books} />
+              </Route>
+            </Switch>
           </ErrorBoundary>
         </div>
       </div>

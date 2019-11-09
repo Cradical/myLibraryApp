@@ -1,18 +1,22 @@
-import React from "react";
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import "./App.css";
-import MainContent from "components/MainContent";
-import NavBar from "components/NavBar";
-import SideBar from "components/SideBar";
+import MainContent from 'components/MainContent'
+import NavBar from 'components/NavBar'
+import SideBar from 'components/SideBar'
+
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <SideBar />
-      <MainContent />
+    <div className='App'>
+      <Router>
+        <NavBar />
+        <SideBar />
+        <MainContent />
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -27,8 +27,7 @@ export default class MainContent extends React.Component {
   render() {
     return (
       <div className='mainContent'>
-        <h2 className='main-content-header'>On The Shelve</h2>
-        <div className='book-card-container'>
+        <div className='content-container'>
           <ErrorBoundary>
             <Switch>
               <Route path='/addBook'>

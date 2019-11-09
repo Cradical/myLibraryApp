@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react'
 
 import BookCard from '../../componentStash/BookCard'
+import { PageHeader } from '../../componentStash/GenericElements'
+
+import './styles.css'
 
 const BookShelf = props => {
   const { books } = props
@@ -9,7 +12,10 @@ const BookShelf = props => {
 
   return (
     <Fragment>
-      <BookCard books={currentShelf} />
+      <PageHeader />
+      <div className='bookShelf-contatiner'>
+        <BookCard books={currentShelf} />
+      </div>
     </Fragment>
   )
 }

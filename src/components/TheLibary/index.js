@@ -14,9 +14,7 @@ import './bookCard.css'
 const BookCard = props => {
   const { books } = props
 
-  let currentBookShelf = books.filter((book, index) => index < 3)
-
-  const bookCard = currentBookShelf.map(book => {
+  const bookCard = books.map(book => {
     return (
       <Card className='book-card' key={book.id}>
         <CardImg

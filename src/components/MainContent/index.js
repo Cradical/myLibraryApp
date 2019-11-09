@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BookCard from '../BookCard'
+import BookShelf from '../BookShelf'
 import ErrorBoundary from '../ErrorBoundary'
 
 import './mainContent.css'
@@ -27,7 +27,7 @@ export default class MainContent extends React.Component {
         <h2 className='main-content-header'>On The Shelve</h2>
         <div className='book-card-container'>
           <ErrorBoundary>
-            <BookCard books={this.state.books} />
+            <BookShelf books={this.state.books} />
           </ErrorBoundary>
         </div>
       </div>

@@ -1,32 +1,36 @@
-import React from "react";
-import "./mainContent.css";
+import React from 'react'
 
-import BookCard from "../BookCard";
+import BookCard from '../BookCard'
+import ErrorBoundary from '../ErrorBoundary'
 
-//Declaration of variables used in component state
-let books;
+import './mainContent.css'
 
 export default class MainContent extends React.Component {
   state = {
-    books
-  };
+    books: [],
+  }
 
-  async componentDidMount() {
-    let response = await fetch("https://shelf-book.herokuapp.com/");
-    let data = await response.json();
+  componentDidMount() {
+    this.fetchBooks()
+  }
 
-    this.setState({ books: data.books });
+  fetchBooks = async () => {
+    let response = await fetch('http://localhost:8080')
+    let data = await response.json()
+
+    this.setState({ books: data.books })
   }
 
   render() {
     return (
-      <div className="mainContent">
-        <h2 className="main-content-header">On The Shelve</h2>
-        <p>Some Content will eventually go here</p>
-        <div className="book-card-container">
-          <BookCard books={this.state.books} />
+      <div className='mainContent'>
+        <h2 className='main-content-header'>On The Shelve</h2>
+        <div className='book-card-container'>
+          <ErrorBoundary>
+            <BookCard books={this.state.books} />
+          </ErrorBoundary>
         </div>
       </div>
-    );
+    )
   }
 }

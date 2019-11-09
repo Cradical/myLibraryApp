@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react'
 import {
   Card,
   CardImg,
@@ -6,24 +6,22 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
-} from "reactstrap";
+  Button,
+} from 'reactstrap'
 
-import "./bookCard.css";
+import './bookCard.css'
 
 const BookCard = props => {
-  const { books } = props;
+  const { books } = props
 
-  if (!props.books) {
-    return null;
-  }
+  let currentBookShelf = books.filter((book, index) => index < 3)
 
-  const bookCard = books.map(book => {
+  const bookCard = currentBookShelf.map(book => {
     return (
-      <Card className="book-card" key={book.id}>
+      <Card className='book-card' key={book.id}>
         <CardImg
           top
-          width="100%"
+          width='100%'
           src={book.imageLink}
           alt={`Book cover of ${book.title}`}
         />
@@ -34,10 +32,10 @@ const BookCard = props => {
           <Button>Button</Button>
         </CardBody>
       </Card>
-    );
-  });
+    )
+  })
 
-  return <Fragment>{bookCard}</Fragment>;
-};
+  return <Fragment>{bookCard}</Fragment>
+}
 
-export default BookCard;
+export default BookCard

@@ -3,6 +3,9 @@
 # environments:
 .vscode/
 
+# node engine
+.node-version
+
 # dependencies
 /node_modules
 /.pnp

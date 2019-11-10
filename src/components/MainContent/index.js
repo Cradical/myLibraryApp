@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import AddBook from '../AddBook'
@@ -8,7 +8,7 @@ import TheLibrary from '../TheLibary'
 
 import './mainContent.css'
 
-export default class MainContent extends React.Component {
+export default class MainContent extends Component {
   state = {
     books: [],
   }

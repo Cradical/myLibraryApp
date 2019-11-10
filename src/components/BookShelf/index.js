@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
-import BookCard from '../../componentStash/BookCard'
-import { PageHeader } from '../../componentStash/GenericElements'
+import BookCard from '../../GenericComponents/BookCard'
+import { PageHeader } from '../../GenericComponents/GenericElements'
 
 import './styles.css'
 

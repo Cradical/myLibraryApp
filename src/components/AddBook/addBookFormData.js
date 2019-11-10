@@ -1,4 +1,4 @@
-export const FORM_FIELDS = [
+export const FORM_FIELD_INPUTS = [
   {
     author: {
       label: {
@@ -100,6 +100,39 @@ export const FORM_FIELDS = [
         type: 'text',
         name: 'language',
         placeholder: 'e.g. Spanish',
+      },
+    },
+  },
+]
+
+export const FORM_FIELD_SWITHCHES = [
+  {
+    haveRead: {
+      input: {
+        id: 'haveRead-check',
+        type: 'switch',
+        name: 'haveRead',
+        label: 'Have you read this?',
+      },
+    },
+  },
+  {
+    nonFiction: {
+      input: {
+        id: 'nonfiction-check',
+        type: 'switch',
+        name: 'nonFiction',
+        label: 'Is this a nonfiction book?',
+      },
+    },
+  },
+  {
+    recommendable: {
+      input: {
+        id: 'recommendable-check',
+        type: 'switch',
+        name: 'recommendable',
+        label: 'Recommend this book?',
       },
     },
   },

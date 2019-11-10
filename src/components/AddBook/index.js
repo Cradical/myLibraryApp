@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { Button, CustomInput, Form, FormGroup, Label } from 'reactstrap'
 
-import { InputFields } from './formBuilder'
-import { PageHeader } from '../../componentStash/GenericElements'
+import {
+  InputFields,
+  SwitchFields,
+} from '../../GenericComponents/Forms/formBuilder'
+import { PageHeader } from '../../GenericComponents/GenericElements'
 export default class AddBook extends Component {
   state = {}
 
@@ -40,34 +43,9 @@ export default class AddBook extends Component {
     return (
       <div>
         <PageHeader header={this.state.pageTitle} />
-        <InputFields onChange={this.handleChange} />
         <Form onSubmit={this.onSubmitForm}>
-          <FormGroup>
-            <Label for='exampleCheckbox'>Switches</Label>
-            <div>
-              <CustomInput
-                id='nonfiction-check'
-                type='switch'
-                name='nonFiction'
-                label='NonFiction?'
-                onChange={this.handleSwitches}
-              />
-              <CustomInput
-                id='haveRead-check'
-                type='switch'
-                name='haveRead'
-                label='Read it?'
-                onChange={this.handleSwitches}
-              />
-              <CustomInput
-                id='recommendable-check'
-                type='switch'
-                name='recommendable'
-                label='Recommendable?'
-                onChange={this.handleSwitches}
-              />
-            </div>
-          </FormGroup>
+          <InputFields onChange={this.handleChange} />
+          <SwitchFields onChange={this.handleSwitches} />
           <Button>Submit</Button>
         </Form>
       </div>

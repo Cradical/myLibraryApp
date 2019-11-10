@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import BookCard from '../../componentStash/BookCard'
+import BookCard from '../../GenericComponents/BookCard'
 
 import './styles.css'
 

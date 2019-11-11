@@ -4,10 +4,9 @@ import { Button } from 'reactstrap'
 
 import './styles.css'
 
-export const BookNotes = () => {
+export const BookNotes = props => {
   let location = useLocation()
   let book = location.state
-  console.log(book)
 
   return (
     <div className='book-notes-container'>
@@ -19,7 +18,10 @@ export const BookNotes = () => {
       <p>{book.bookSummary}</p>
       <div className='action-btns'>
         <Button color='info'>Update This Book</Button>
-        <Button onClick={() => handleDelete(book.id)} color='danger'>
+        <Button
+          onClick={() => handleDelete(book.id, props.history)}
+          color='danger'
+        >
           Delete This Book
         </Button>
         <a href={book.link} target='_blank'>
@@ -30,13 +32,13 @@ export const BookNotes = () => {
   )
 }
 
-const handleDelete = async id => {
-  console.log(id)
-
+const handleDelete = async (id, history) => {
   await axios
     .delete(`http://localhost:8080/books/${id}`)
     .then(response => console.log(response))
     .catch(error => console.error(error))
+
+  history.push('/theLibrary')
 }
 
 const axios = require('axios')

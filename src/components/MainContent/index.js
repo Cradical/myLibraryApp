@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import AddBook from '../AddBook'
 import { BookNotes } from '../BookNotes'
@@ -9,7 +9,7 @@ import TheLibrary from '../TheLibary'
 
 import './mainContent.css'
 
-export default class MainContent extends Component {
+class MainContent extends Component {
   state = {
     books: [],
   }
@@ -19,8 +19,9 @@ export default class MainContent extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log('props: ', this.props)
-    console.log('prevProps: ', prevProps)
+    if (prevProps !== this.props) {
+      this.fetchBooks()
+    }
   }
 
   fetchBooks = async () => {
@@ -31,6 +32,7 @@ export default class MainContent extends Component {
   }
 
   render() {
+    const { history } = this.props
     return (
       <div className='mainContent'>
         <div className='content-container'>
@@ -46,7 +48,7 @@ export default class MainContent extends Component {
                 <TheLibrary books={this.state.books} />
               </Route>
               <Route path='/bookNotes'>
-                <BookNotes />
+                <BookNotes history={history} />
               </Route>
             </Switch>
           </ErrorBoundary>
@@ -55,3 +57,5 @@ export default class MainContent extends Component {
     )
   }
 }
+
+export default withRouter(MainContent)

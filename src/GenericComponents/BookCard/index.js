@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   Button,
 } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 import './bookCard.css'
 
@@ -15,6 +16,11 @@ const BookCard = props => {
   const { books } = props
 
   const bookCard = books.map(book => {
+    let location = {
+      pathname: `bookNotes/${book.id}`,
+      state: book,
+    }
+
     return (
       <Card className='book-card' key={book.id}>
         <CardImg
@@ -27,7 +33,11 @@ const BookCard = props => {
           <CardTitle>{book.title}</CardTitle>
           <CardSubtitle>{book.subtitle}</CardSubtitle>
           <CardText>{book.bookSummary}</CardText>
-          <Button>Button</Button>
+          <Button color='primary'>
+            <Link className='card-link' to={location}>
+              Button
+            </Link>
+          </Button>
         </CardBody>
       </Card>
     )

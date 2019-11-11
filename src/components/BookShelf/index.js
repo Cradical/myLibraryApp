@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
 
 import BookCard from '../../GenericComponents/BookCard'
-import { PageHeader } from '../../GenericComponents/GenericElements'
+import { PageHeader } from '../../GenericComponents/GenericPageElements'
 
 import './styles.css'
 
 const BookShelf = props => {
-  const { books } = props
+  const { books, renderModal } = props
+  console.log(renderModal)
 
   let currentShelf = books.filter((book, index) => index < 3)
 

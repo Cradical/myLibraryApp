@@ -35,7 +35,7 @@ export const SwitchFields = props => {
     return (
       <FormGroup key={index}>
         <CustomInput
-          id={formData.input.switchId}
+          id={formData.input.id}
           type={formData.input.type || 'switch'}
           name={formData.input.name || ''}
           label={formData.input.label}

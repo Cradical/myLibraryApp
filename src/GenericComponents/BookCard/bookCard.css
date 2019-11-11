@@ -8,3 +8,7 @@
   height: min-content;
   width: 150px;
 }
+
+.card-link {
+  color: white;
+}

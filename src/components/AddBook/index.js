@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Button, CustomInput, Form, FormGroup, Label } from 'reactstrap'
+import { Button, Form } from 'reactstrap'
 
 import {
   InputFields,
   SwitchFields,
 } from '../../GenericComponents/Forms/formBuilder'
-import { PageHeader } from '../../GenericComponents/GenericElements'
+import { PageHeader } from '../../GenericComponents/GenericPageElements'
 export default class AddBook extends Component {
   state = {}
 
@@ -25,18 +25,18 @@ export default class AddBook extends Component {
     }
   }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    })
-  }
-
   handleSwitches = event => {
     if (event.target.value === 'on') {
       this.setState({ [event.target.name]: true })
     } else {
       this.setState({ [event.target.name]: false })
     }
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    })
   }
 
   render() {

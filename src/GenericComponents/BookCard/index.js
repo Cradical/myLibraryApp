@@ -35,7 +35,7 @@ const BookCard = props => {
           <CardText>{book.bookSummary}</CardText>
           <Button color='primary'>
             <Link className='card-link' to={location}>
-              Button
+              View Book
             </Link>
           </Button>
         </CardBody>

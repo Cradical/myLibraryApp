@@ -5,7 +5,7 @@ import {
   InputFields,
   SwitchFields,
 } from '../../GenericComponents/Forms/formBuilder'
-import { PageHeader } from '../../GenericComponents/GenericPageElements'
+
 export default class AddBook extends Component {
   state = {}
 
@@ -44,7 +44,7 @@ export default class AddBook extends Component {
   render() {
     return (
       <div>
-        <PageHeader header={this.state.pageTitle} />
+        <h1>Add A Book</h1>
         <Form onSubmit={this.onSubmitForm}>
           <InputFields onChange={this.handleChange} />
           <SwitchFields onChange={this.handleSwitches} />

@@ -1,0 +1,9 @@
+.book-notes-container {
+  width: 100%;
+}
+
+.action-btns {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}

@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import "./navbar.css";
+import React, { Fragment } from 'react'
+import './navbar.css'
 import {
   Collapse,
   Navbar,
@@ -11,58 +11,51 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+  DropdownItem,
+} from 'reactstrap'
 
 export default class NavbarHeader extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
-      isOpen: false
-    };
+      isOpen: false,
+    }
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
-    });
+      isOpen: !this.state.isOpen,
+    })
   }
   render() {
     return (
       <Fragment>
-        <Navbar className="navbar" color="primary" light expand="md">
-          <NavbarBrand className="text-white" href="/">
+        <Navbar className='navbar' color='primary' light expand='md'>
+          <NavbarBrand className='text-white' href='/'>
             Shelf-Book
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink className="text-white" href="/components/">
-                  Components
+                <NavLink className='text-white' href='/bookShelf/'>
+                  Book Shelf
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="text-white" href="">
+                <NavLink
+                  className='text-white'
+                  href='https://github.com/Cradical'
+                  target='_blank'
+                >
                   GitHub
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="text-white" nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Navbar>
       </Fragment>
-    );
+    )
   }
 }

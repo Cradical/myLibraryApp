@@ -18,7 +18,10 @@ export default class MainContent extends Component {
     this.fetchBooks()
   }
 
-  componentDidUpdate(prevProps) {}
+  componentDidUpdate(prevProps) {
+    console.log('props: ', this.props)
+    console.log('prevProps: ', prevProps)
+  }
 
   fetchBooks = async () => {
     let response = await fetch('http://localhost:8080')
@@ -34,7 +37,7 @@ export default class MainContent extends Component {
           <ErrorBoundary>
             <Switch>
               <Route path='/addBook'>
-                <AddBook />
+                <AddBook fetchBooks={this.fetchBooks} />
               </Route>
               <Route exact path='/bookShelf'>
                 <BookShelf books={this.state.books} />

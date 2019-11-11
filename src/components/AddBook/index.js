@@ -23,6 +23,8 @@ export default class AddBook extends Component {
     } catch (error) {
       console.error(error)
     }
+
+    this.props.fetchBooks()
   }
 
   handleSwitches = event => {
@@ -40,6 +42,7 @@ export default class AddBook extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <PageHeader header={this.state.pageTitle} />

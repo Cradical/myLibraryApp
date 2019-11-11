@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, withRouter } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 
 import AddBook from '../AddBook'
 import { BookNotes } from '../BookNotes'
@@ -37,10 +37,6 @@ class MainContent extends Component {
       <div className='mainContent'>
         <div className='content-container'>
           <ErrorBoundary>
-            <div>
-              <h2>Welcome to ShelfBook</h2>
-              <h5>Where do you want to go?</h5>
-            </div>
             <Switch>
               <Route path='/addBook'>
                 <AddBook fetchBooks={this.fetchBooks} />
@@ -54,6 +50,7 @@ class MainContent extends Component {
               <Route path='/bookNotes'>
                 <BookNotes history={history} />
               </Route>
+              <Redirect from='/' to='/bookShelf' />
             </Switch>
           </ErrorBoundary>
         </div>

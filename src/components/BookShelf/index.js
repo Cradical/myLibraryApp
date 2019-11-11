@@ -6,8 +6,7 @@ import { PageHeader } from '../../GenericComponents/GenericPageElements'
 import './styles.css'
 
 const BookShelf = props => {
-  const { books, renderModal } = props
-  console.log(renderModal)
+  const { books } = props
 
   let currentShelf = books.filter((book, index) => index < 3)
 

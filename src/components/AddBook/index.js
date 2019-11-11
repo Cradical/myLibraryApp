@@ -42,7 +42,6 @@ export default class AddBook extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <PageHeader header={this.state.pageTitle} />

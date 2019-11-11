@@ -7,11 +7,12 @@ import './styles.css'
 export const BookNotes = props => {
   let location = useLocation()
   let book = location.state
+  let alt = book.title
 
   return (
     <div className='book-notes-container'>
       <h1>Information about:</h1>
-      <img src={book.imageLink} />
+      <img alt={alt} src={book.imageLink} />
       <h3>{book.title}</h3>
       <h3>{book.subtitle}</h3>
       <h5>By {book.author}</h5>
@@ -24,7 +25,7 @@ export const BookNotes = props => {
         >
           Delete This Book
         </Button>
-        <a href={book.link} target='_blank'>
+        <a href={book.link} target='_blank' rel='noopener noreferrer'>
           <Button color='primary'>Visit the website</Button>
         </a>
       </div>

@@ -37,6 +37,10 @@ class MainContent extends Component {
       <div className='mainContent'>
         <div className='content-container'>
           <ErrorBoundary>
+            <div>
+              <h2>Welcome to ShelfBook</h2>
+              <h5>Where do you want to go?</h5>
+            </div>
             <Switch>
               <Route path='/addBook'>
                 <AddBook fetchBooks={this.fetchBooks} />
